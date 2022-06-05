@@ -7,14 +7,17 @@
 #     nix-build -A mypackage
 
 { pkgs ? import <nixpkgs> { } }:
-
+let
+  callPackage = path: overrides: pkgs.callPackage path
+    (with pkgs; {
+      sources = pkgs.callPackage ./_sources/generated.nix { };
+    }) // overrides;
+in
 {
   # The `lib`, `modules`, and `overlay` names are special
   #lib = import ./lib { inherit pkgs; }; # functions
   #modules = import ./modules; # NixOS modules
   #overlays = import ./overlays; # nixpkgs overlays
 
-  #example-package = pkgs.callPackage ./pkgs/example-package { };
-  # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
-  # ...
+  material-fox = callPackage ./pkgs/material-fox { };
 }
