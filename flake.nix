@@ -17,5 +17,8 @@
       packages = forAllSystems (system: import ./default.nix {
         pkgs = import nixpkgs { inherit system; };
       });
+      formatter = forAllSystems (system:
+        (let pkgs = import nixpkgs { inherit system; }; in pkgs.nixpkgs-fmt)
+      );
     };
 }
