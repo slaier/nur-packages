@@ -11,7 +11,7 @@ stdenvNoCC.mkDerivation {
   meta = with lib; {
     description = "A Material Design-inspired userChrome.css theme for Firefox.";
     homepage = "https://github.com/muckSponge/MaterialFox";
-    platforms = platforms.linux;
+    platforms = platforms.linux ++ platforms.darwin;
     license = licenses.mit;
   };
 }
