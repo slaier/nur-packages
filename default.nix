@@ -8,10 +8,9 @@
 
 { pkgs ? import <nixpkgs> { } }:
 let
+  sources = pkgs.callPackage ./_sources/generated.nix { };
   callPackage = path: overrides: pkgs.callPackage path
-    (with pkgs; {
-      sources = pkgs.callPackage ./_sources/generated.nix { };
-    }) // overrides;
+    { inherit sources; } // overrides;
 in
 {
   # The `lib`, `modules`, and `overlay` names are special
@@ -20,4 +19,5 @@ in
   #overlays = import ./overlays; # nixpkgs overlays
 
   material-fox = callPackage ./pkgs/material-fox { };
-}
+} // (import ./pkgs/vscode-extensions { inherit pkgs sources; })
+
