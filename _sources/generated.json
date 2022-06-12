@@ -197,6 +197,25 @@
         },
         "version": "11.12.0"
     },
+    "arkenfox-userjs": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "arkenfox-userjs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "arkenfox",
+            "repo": "user.js",
+            "rev": "100.0",
+            "sha256": "sha256-gitVP21/l26hfR+r7+ST2o7pY8ikr2u92n2uzuLgnKs=",
+            "type": "github"
+        },
+        "version": "100.0"
+    },
     "material-fox": {
         "cargoLocks": null,
         "extract": null,

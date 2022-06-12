@@ -133,6 +133,17 @@
     homepage = "https://github.com/vscode-icons/vscode-icons";
     description = "Icons for Visual Studio Code.";
   };
+  arkenfox-userjs = {
+    pname = "arkenfox-userjs";
+    version = "100.0";
+    src = fetchFromGitHub ({
+      owner = "arkenfox";
+      repo = "user.js";
+      rev = "100.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-gitVP21/l26hfR+r7+ST2o7pY8ikr2u92n2uzuLgnKs=";
+    });
+  };
   material-fox = {
     pname = "material-fox";
     version = "v93.1";

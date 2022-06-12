@@ -19,5 +19,6 @@ in
   #overlays = import ./overlays; # nixpkgs overlays
 
   material-fox = callPackage ./pkgs/material-fox { };
+  arkenfox-userjs = callPackage ./pkgs/arkenfox-userjs { };
 } // (import ./pkgs/vscode-extensions { inherit pkgs sources; })
 

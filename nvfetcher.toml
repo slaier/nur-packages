@@ -2,6 +2,10 @@
 src.github_tag = "muckSponge/MaterialFox"
 fetch.github = "muckSponge/MaterialFox"
 
+[arkenfox-userjs]
+src.github_tag = "arkenfox/user.js"
+fetch.github = "arkenfox/user.js"
+
 ## VS Code Extensions
 
 ['vscode-extensions.mads-hartmann.bash-ide-vscode']
