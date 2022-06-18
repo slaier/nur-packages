@@ -6,6 +6,5 @@ on:
   workflow_dispatch:
 jobs:
   update_nix_inputs:
-    uses: slaier/reusable-workflows/.github/workflows/update_nix_inputs.yaml@main
-    secrets: inherit
+    uses: slaier/reusable-workflows/.github/workflows/update_nix_inputs.yml@main
 
