@@ -1,10 +1,11 @@
 name: "Build and populate cache"
 on:
   pull_request:
+    types: [opened, reopened]
   push:
-  schedule:
-    # rebuild at 03:39 on Saturday
-    - cron:  '39 3 * * 6'
+    branches:
+      - main
+      - develop
 env:
   nurRepo: slaier
   cachixName: slaier
