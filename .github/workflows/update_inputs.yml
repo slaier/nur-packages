@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 jobs:
   update_nix_inputs:
-    uses: slaier/reusable-workflows/.github/workflows/update_nix_inputs.yml@main
+    uses: slaier/reusable-workflows/.github/workflows/update_nix_inputs.yml@test-update-inputs
     with:
       config_path: nvfetcher.toml
 
