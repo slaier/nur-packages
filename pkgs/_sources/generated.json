@@ -18,6 +18,20 @@
         },
         "version": "106.0"
     },
+    "clash-geoip": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "clash-geoip",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-si/RzJvXbAcG7Wyv780Hwr+1oiWB+uvc2RYbnYpE0MA=",
+            "type": "url",
+            "url": "https://github.com/Dreamacro/maxmind-geoip/releases/download/20221112/Country.mmdb"
+        },
+        "version": "20221112"
+    },
     "clash-speedtest": {
         "cargoLocks": null,
         "extract": null,

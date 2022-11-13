@@ -12,6 +12,14 @@
       sha256 = "sha256-WB9w/UoFqp/WyRhe87dNqwbMAXa8lmsK/QCeTzRWmj8=";
     });
   };
+  clash-geoip = {
+    pname = "clash-geoip";
+    version = "20221112";
+    src = fetchurl {
+      url = "https://github.com/Dreamacro/maxmind-geoip/releases/download/20221112/Country.mmdb";
+      sha256 = "sha256-si/RzJvXbAcG7Wyv780Hwr+1oiWB+uvc2RYbnYpE0MA=";
+    };
+  };
   clash-speedtest = {
     pname = "clash-speedtest";
     version = "v2.0.0";

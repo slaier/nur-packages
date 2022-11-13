@@ -10,6 +10,7 @@ in
 {
   material-fox = callPackage ./material-fox { };
   arkenfox-userjs = callPackage ./arkenfox-userjs { };
+  clash-geoip = callPackage ./clash-geoip { };
   clash-speedtest = callPackage ./clash-speedtest { };
   vscode-extensions = recurseIntoAttrs (mapAttrs (_n: recurseIntoAttrs) (callPackages ./vscode-extensions { }));
 }
