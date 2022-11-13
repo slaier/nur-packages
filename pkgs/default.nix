@@ -13,4 +13,5 @@ in
   clash-geoip = callPackage ./clash-geoip { };
   clash-speedtest = callPackage ./clash-speedtest { };
   vscode-extensions = recurseIntoAttrs (mapAttrs (_n: recurseIntoAttrs) (callPackages ./vscode-extensions { }));
+  yacd = callPackage ./yacd { };
 }
