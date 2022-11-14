@@ -5,10 +5,11 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
   outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
+    let
+      inherit (nixpkgs.lib) mapAttrs;
+    in
+    (flake-utils.lib.eachDefaultSystem (system:
       let
-        inherit (nixpkgs.lib.attrsets) mapAttrs;
-
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
@@ -17,8 +18,9 @@
       in
       {
         formatter = pkgs.nixpkgs-fmt;
-        nixosModules = mapAttrs (name: path: import path) (import ./modules);
         inherit legacyPackages;
         packages = flake-utils.lib.flattenTree legacyPackages;
-      });
+      })) // {
+      nixosModules = mapAttrs (_n: import) (import ./modules);
+    };
 }
