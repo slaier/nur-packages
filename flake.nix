@@ -7,6 +7,25 @@
   outputs = { self, nixpkgs, flake-utils }:
     let
       inherit (nixpkgs.lib) mapAttrs;
+
+      phicomm-n1 = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [
+          "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64-installer.nix"
+          {
+            nixpkgs.config.allowUnfree = true;
+            nixpkgs.config.allowUnsupportedSystem = true;
+            nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
+            nix.registry.nixpkgs.flake = nixpkgs;
+            nixpkgs.overlays = [
+              (final: prev: {
+                inherit (import ./pkgs { pkgs = prev; }) ubootPhicommN1;
+              })
+            ];
+          }
+          ./modules/installer/sd-image-phicomm-n1.nix
+        ];
+      };
     in
     (flake-utils.lib.eachDefaultSystem (system:
       let
@@ -22,5 +41,6 @@
         packages = flake-utils.lib.flattenTree legacyPackages;
       })) // {
       nixosModules = mapAttrs (_n: import) (import ./modules);
+      images.phicomm-n1 = phicomm-n1.config.system.build.sdImage;
     };
 }
