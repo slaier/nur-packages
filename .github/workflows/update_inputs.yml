@@ -31,9 +31,22 @@ jobs:
       - name: Update nvfetcher sources
         working-directory: ./pkgs
         run: |
-          nix shell nixpkgs#nvfetcher -c nvfetcher --commit-changes
+          nix shell nixpkgs#nvfetcher -c nvfetcher -l changelog.txt
+          git add _sources
       - name: Push
         run: |
+          nvfetcher=$(<./pkgs/changelog.txt)
+          if [[ -n "$nvfetcher" ]]; then
+            nvfetcher="Nvfetcher updates:"$'\n\n'"$nvfetcher"
+          fi
+          commit_msg=$(git log --format=%B main..HEAD)
+          if [[ -n "$commit_msg" ]]; then
+            git reset --soft HEAD^
+          else
+            commit_msg="nix(deps): update inputs"
+          fi
+          commit_msg="$commit_msg"$'\n\n'"$nvfetcher"
+          git commit -m "$commit_msg"
           git push origin wip-update-inputs --force-with-lease
       - name: Trigger Workflow
         uses: actions/github-script@v6
