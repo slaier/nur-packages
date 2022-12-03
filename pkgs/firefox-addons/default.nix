@@ -9,6 +9,7 @@ let
 
       src = fetchurl { inherit url sha256; };
 
+      preferLocalBuild = true;
       allowSubstitutes = true;
 
       buildCommand = ''

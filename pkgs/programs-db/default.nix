@@ -3,6 +3,8 @@
 stdenv.mkDerivation rec {
   inherit (sources.programs-db) pname version src;
 
+  preferLocalBuild = true;
+
   installPhase = ''
     runHook preInstall
     mkdir -p $out
