@@ -3,13 +3,13 @@
 {
   arkenfox-userjs = {
     pname = "arkenfox-userjs";
-    version = "111.0";
+    version = "112.0";
     src = fetchFromGitHub ({
       owner = "arkenfox";
       repo = "user.js";
-      rev = "111.0";
+      rev = "112.0";
       fetchSubmodules = false;
-      sha256 = "sha256-EutseXvFnDkYq95GWiGrTFqI4fqybvsPQlVV0Wy5tFU=";
+      sha256 = "sha256-k4PF8FWN6U+//UmZX4UxzBWbfAgEwQznLVsaFV/fVKo=";
     });
   };
   clash-geoip = {
@@ -41,18 +41,18 @@
   };
   motrix = {
     pname = "motrix";
-    version = "1.8.14";
+    version = "1.8.19";
     src = fetchurl {
-      url = "https://github.com/agalwood/Motrix/releases/download/v1.8.14/Motrix-1.8.14.AppImage";
-      sha256 = "sha256-h4TZzExl1zThwzlKBtL0u3V1jFjjNM2Cscy4hGir9Ts=";
+      url = "https://github.com/agalwood/Motrix/releases/download/v1.8.19/Motrix-1.8.19.AppImage";
+      sha256 = "sha256-oSO+VH3bZcjnXjECqZgOmsvlOONbfgOq50qVLvHdKfo=";
     };
   };
   programs-db = {
     pname = "programs-db";
-    version = "22.11.3940.15b75800dce";
+    version = "22.11.4037.cc45a3f8c98";
     src = fetchurl {
-      url = "https://releases.nixos.org/nixos/22.11/nixos-22.11.3940.15b75800dce/nixexprs.tar.xz";
-      sha256 = "sha256-Y6CsjjFa0BqDswsY5cBMtjom+XQk2cvu5c2PLQjTq/o=";
+      url = "https://releases.nixos.org/nixos/22.11/nixos-22.11.4037.cc45a3f8c98/nixexprs.tar.xz";
+      sha256 = "sha256-tCpD1U78TwZDozPOWqPAmGaskohpRcve2Vb54E/II2w=";
     };
   };
   remote-containers = {
@@ -71,15 +71,15 @@
   };
   ubootPhicommN1 = {
     pname = "ubootPhicommN1";
-    version = "83038e36425f1748d355ea56a0be1168b46aa7c4";
+    version = "9aa890be5f9f4109e1a9a338ab584e0fc9947d5c";
     src = fetchFromGitHub ({
       owner = "cattyhouse";
       repo = "new-uboot-for-N1";
-      rev = "83038e36425f1748d355ea56a0be1168b46aa7c4";
+      rev = "9aa890be5f9f4109e1a9a338ab584e0fc9947d5c";
       fetchSubmodules = false;
-      sha256 = "sha256-vsyF5fbzMtl8A3NRzNn5GHlvj+/oxmlQbQ4tUJEatmo=";
+      sha256 = "sha256-R6lzd7uyAIzxwHph9jZ1y0kTr8kQA5VeCIFyAJMq+vg=";
     });
-    date = "2022-12-31";
+    date = "2023-04-29";
   };
   yacd = {
     pname = "yacd";
